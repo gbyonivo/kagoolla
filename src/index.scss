@@ -1,66 +1,68 @@
-body {
-  #accordions{
-    ul{
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      .accordion{
-        background:  #f6f6f6;
-        margin: 4px 0;
-        overflow: hidden;
-        max-height: 30px;
-        transition: max-height ease 0.5s;
-        h2.beerDetailsHeader{
-          cursor: pointer;
-          padding: 8px;
-          margin: 0;
-          font-size: 14px;
-        }
-        div.beerDetailsBody{
-          padding: 15px;
-          div{
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 5px;
-            em{
-              margin-right: 10px;
-            }
-          }
-        }
-        &.active{
-          max-height: 1000px;
-          transition: max-height ease 0.5s;
-          h2{
-            background: rgb(230, 230, 230);
+#accordions{
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    .accordion{
+      background:  #f6f6f6;
+      margin: 4px 0;
+      overflow: hidden;
+      max-height: 30px;
+      transition: max-height ease 0.5s;
+      h2.beerDetailsHeader{
+        cursor: pointer;
+        padding: 8px;
+        margin: 0;
+        font-size: 14px;
+      }
+      div.beerDetailsBody{
+        padding: 15px;
+        div{
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 5px;
+          em{
+            margin-right: 10px;
           }
         }
       }
-    }
-  }
-  #grids{
-    ul{
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      li.beerItem{
-        height: 300px;
-        padding: 10px;
-        width: 300px;
-        float: left;
-        div.beerBox{
-          background:  #f6f6f6;
-          margin: 4px 0;
-          overflow: hidden;
-          img.beerImage{
-            height: 200px;
-            margin-right: auto;
-            margin-left: auto;
-          }
-          div.beerName{
-            padding: 15px;
-          }
+      &.active{
+        max-height: 1000px;
+        transition: max-height ease 0.5s;
+        h2{
+          background: rgb(230, 230, 230);
         }
       }
     }
   }
 }
+#grids{
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap:1em;
+    grid-auto-rows: minmax(200px, auto);
+    li.beerItem{
+      // padding: 10px;
+      div.beerBox{
+        background:  #f6f6f6;
+        img.beerImage{
+          height: 200px;
+          display: block;
+          width: 100px;
+          margin-right: auto;
+          margin-left: auto;
+          padding-top: 10px;
+        }
+        div.beerName{
+          padding: 15px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
