@@ -1,5 +1,66 @@
 body {
-  p {
-    color: red;
+  #accordions{
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      .accordion{
+        background:  #f6f6f6;
+        margin: 4px 0;
+        overflow: hidden;
+        max-height: 30px;
+        transition: max-height ease 0.5s;
+        h2.beerDetailsHeader{
+          cursor: pointer;
+          padding: 8px;
+          margin: 0;
+          font-size: 14px;
+        }
+        div.beerDetailsBody{
+          padding: 15px;
+          div{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5px;
+            em{
+              margin-right: 10px;
+            }
+          }
+        }
+        &.active{
+          max-height: 1000px;
+          transition: max-height ease 0.5s;
+          h2{
+            background: rgb(230, 230, 230);
+          }
+        }
+      }
+    }
+  }
+  #grids{
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li.beerItem{
+        height: 300px;
+        padding: 10px;
+        width: 300px;
+        float: left;
+        div.beerBox{
+          background:  #f6f6f6;
+          margin: 4px 0;
+          overflow: hidden;
+          img.beerImage{
+            height: 200px;
+            margin-right: auto;
+            margin-left: auto;
+          }
+          div.beerName{
+            padding: 15px;
+          }
+        }
+      }
+    }
   }
 }

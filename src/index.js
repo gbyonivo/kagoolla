@@ -1,8 +1,18 @@
-import message from './message';
-import './index.scss';
 import { createElement, addElementToPage } from './functions/document';
+import './index.scss';
+import { store } from './data';
 
-const paragraph = createElement('p');
-paragraph.innerHTML = message;
+const accordion = createElement('div', { id: 'accordions' });
 
-addElementToPage(paragraph);
+const carousel = createElement('div', { id: 'carousels' });
+
+const grid = createElement('div', { id: 'grids' });
+
+carousel.innerHTML = 'carousel';
+grid.innerHTML = 'grids';
+
+addElementToPage(accordion);
+addElementToPage(carousel);
+addElementToPage(grid);
+
+store.init();
