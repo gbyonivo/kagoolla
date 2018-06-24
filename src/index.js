@@ -1,6 +1,8 @@
 import { createElement, addElementToPage } from './functions/document';
 import './index.scss';
 import { store } from './data';
+import { createBeersGrid } from './grid';
+import { createBeersAccordion } from './accordion';
 
 const accordion = createElement('div', { id: 'accordions' });
 
@@ -14,4 +16,7 @@ addElementToPage(accordion);
 addElementToPage(carousel);
 addElementToPage(grid);
 
-store.init();
+store.init([
+  createBeersAccordion,
+  createBeersGrid
+]);
