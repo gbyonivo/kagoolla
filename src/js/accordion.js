@@ -44,7 +44,7 @@ export const beersList = beers => beers.map((beer) => {
 });
 
 export const beersAccordion = (beers) => {
-  const header = createElement('h2', {}, 'Beers');
+  const header = createElement('h2', { class: 'accordionHeader' }, 'Available Beers');
   const listContainer = createElement('ul', {});
   addElementsToElement(listContainer, beersList(beers));
   return [header, listContainer];
