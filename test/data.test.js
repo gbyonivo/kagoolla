@@ -52,5 +52,5 @@ describe('store.init', () => {
     expect(Promise.resolve).toHaveBeenCalled();
     expect(after.y).toHaveBeenCalled();
     expect(store.beers.length).toEqual(2);
-  })
-})
+  });
+});
