@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`documentFunctions.addElementsToElement should create dom and add child element to dom 1`] = `
+<div
+  class="eli"
+>
+  <span
+    class="span"
+  />
+</div>
+`;
+
+exports[`documentFunctions.createElement should create dom 1`] = `
+<li
+  class="eli"
+/>
+`;
+
+exports[`documentFunctions.createElement should create dom 2`] = `<span />`;

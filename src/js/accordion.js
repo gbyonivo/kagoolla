@@ -2,7 +2,6 @@ import {
   getElementById,
   getElementsByClass,
   createElement,
-  addElementsToAccordion,
   addElementsToElement
 } from '../functions/document';
 
@@ -50,4 +49,4 @@ export const beersAccordion = (beers) => {
   return [header, listContainer];
 };
 
-export const createBeersAccordion = beers => addElementsToAccordion(beersAccordion(beers));
+export const createBeersAccordion = beers => addElementsToElement(getElementById('accordionWrapper'), beersAccordion(beers));

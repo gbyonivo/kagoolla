@@ -9,21 +9,11 @@ export const createElement = (tagName, options = {}, innerHTML = '') => {
   return element;
 };
 
-export const addElementToPage = element => doc.body.appendChild(element);
-
-export const addElementsToAccordion = (elements) => {
-  elements.forEach((element) => {
-    doc.getElementById('accordionWrapper').appendChild(element);
-  });
-};
-
 export const addElementsToElement = (element, elements) => {
   elements.forEach((el) => {
     element.appendChild(el);
   });
 };
-
-export const addEventListenerToBody = (action, func) => doc.body.addEventListener(action, func, false);
 
 export const getElementById = id => doc.querySelector(`#${id}`);
 

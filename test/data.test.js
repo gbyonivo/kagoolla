@@ -53,4 +53,13 @@ describe('store.init', () => {
     expect(after.y).toHaveBeenCalled();
     expect(store.beers.length).toEqual(2);
   });
+
+  it('should call certain functions', async () => {
+    initializeStore();
+    api.fetchBeersFromApi = jest.fn().mockReturnValueOnce(Promise.resolve(beers.concat({ name: 'a', abv: 2 })));
+    spyOn(Promise, 'resolve').and.callThrough();
+    const actual = await store.init();
+    expect(Promise.resolve).toHaveBeenCalled();
+    expect(store.beers.length).toEqual(3);
+  });
 });
