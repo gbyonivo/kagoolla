@@ -4,7 +4,7 @@ import {
   createElement,
   addElementsToAccordion,
   addElementsToElement
-} from './functions/document';
+} from '../functions/document';
 
 export const onClickAccordion = (id) => {
   const content = getElementById(`accordion${id}`);

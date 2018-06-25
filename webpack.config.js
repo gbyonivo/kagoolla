@@ -1,43 +1,89 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const env = process.env.NODE_ENV || 'development';
-const isDev = env === 'development';
-const isProd = env === 'production';
-
-const extractScss = new ExtractTextPlugin({
-  filename: 'index.css',
-  disable: isDev
-});
+const path = require('path');
+const htmlPlugin = new HtmlWebpackPlugin({
+  template: './src/index.html',
+  filename: 'index.html'
+})
 
 module.exports = {
-  entry: {
-    bundle: './src/index.js'
+  entry: ['babel-polyfill', './src/index.js'],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'json-loader' 
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: "[name]_[local]_[hash:base64]",
+              sourceMap: true,
+              minimize: true
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg|eot|ttf|woff|woff2)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75
+              }
+            }
+          },
+        ],
+      }
+    ]
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: __dirname + '/../dist',
+    publicPath: '/'
   },
-  plugins: [
-    new HtmlWebpackPlugin(),
-    extractScss
-  ],
-  module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: 'babel-loader'
-    }, {
-      test: /(\.css|\.scss)$/,
-      exclude: /node_modules/,
-      use: extractScss.extract({
-        use:[
-          {loader: 'css-loader'},
-          {loader: 'sass-loader'}
-        ],
-        fallback: 'style-loader'
-      })
-    }]
-  }
-};
+  devServer: {
+    historyApiFallback: true,
+  },
+  node: {
+    net: "empty",
+    tls: "empty"
+  },
+  plugins: [htmlPlugin]
+}

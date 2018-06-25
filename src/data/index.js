@@ -16,5 +16,6 @@ export const store = { // eslint-disable-line
   },
   getGridBeers: filterValue => [...store.beers]
     .sort((a, b) => (filterValue || store.abvFilterValue) === FILTER_OPTIONS.LOW_TO_HIGH ? a.abv - b.abv : b.abv - a.abv)
-    .slice(0, 8)
+    .slice(0, 8),
+  getCarouselBeers: () => [...store.beers].slice(0, 4)
 };

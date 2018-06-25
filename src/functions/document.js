@@ -11,11 +11,9 @@ export const createElement = (tagName, options = {}, innerHTML = '') => {
 
 export const addElementToPage = element => doc.body.appendChild(element);
 
-export const addElementToAccordion = (domString) => { doc.getElementById('accordion').innerHTML = domString; };
-
 export const addElementsToAccordion = (elements) => {
   elements.forEach((element) => {
-    doc.getElementById('accordions').appendChild(element);
+    doc.getElementById('accordionWrapper').appendChild(element);
   });
 };
 

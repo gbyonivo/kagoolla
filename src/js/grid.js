@@ -2,9 +2,9 @@ import {
   createElement,
   addElementsToElement,
   getElementById
-} from './functions/document';
-import { FILTER_OPTIONS } from './constants';
-import { store } from './data';
+} from '../functions/document';
+import { FILTER_OPTIONS } from '../constants';
+import { store } from '../data';
 
 
 export const beerItem = (beer) => {
@@ -16,7 +16,7 @@ export const beerItem = (beer) => {
 };
 
 export const beersList = beers => beers.map((beer) => {
-  const listItem = createElement('li', { id: `accordion${beer.id}`, class: 'beerItem' });
+  const listItem = createElement('li', { id: `grid${beer.id}`, class: 'beerItem' });
   addElementsToElement(listItem, beerItem(beer));
   return listItem;
 });
@@ -48,4 +48,4 @@ export const beersGrid = (beers) => {
   return [filter, listContainer];
 };
 
-export const createBeersGrid = () => addElementsToElement(getElementById('grids'), beersGrid(store.getGridBeers()));
+export const createBeersGrid = () => addElementsToElement(getElementById('gridWrapper'), beersGrid(store.getGridBeers()));
