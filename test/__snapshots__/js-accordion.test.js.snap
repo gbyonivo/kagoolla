@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`accordion.beerItem should create a beerItem 1`] = `
+<div
+  class="beerDetails"
+>
+  <h2
+    class="beerDetailsHeader"
+  >
+    Egyptian King
+  </h2>
+  <div
+    class="beerDetailsBody"
+  >
+    <div
+      class="tagLine"
+    >
+      <em>
+        tag line:
+      </em>
+      <span>
+        pyramids
+      </span>
+    </div>
+    <div
+      class="firstBrewed"
+    >
+      <em>
+        first brewed:
+      </em>
+      <span>
+        heaven
+      </span>
+    </div>
+    <div
+      class="description"
+    >
+      <em>
+        description:
+      </em>
+      <span>
+        goals galore
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`accordion.beersAccordion should create a beersAccordion 1`] = `
+<h2
+  class="accordionHeader"
+>
+  Available Beers
+</h2>
+`;
+
+exports[`accordion.beersAccordion should create a beersAccordion 2`] = `<ul />`;
+
+exports[`accordion.beersList should create a beersList 1`] = `
+<li
+  class="accordion"
+  id="accordion1"
+>
+  <div
+    class="beerDetails"
+  >
+    <h2
+      class="beerDetailsHeader"
+    >
+      Egyptian King
+    </h2>
+    <div
+      class="beerDetailsBody"
+    >
+      <div
+        class="tagLine"
+      >
+        <em>
+          tag line:
+        </em>
+        <span>
+          pyramids
+        </span>
+      </div>
+      <div
+        class="firstBrewed"
+      >
+        <em>
+          first brewed:
+        </em>
+        <span>
+          heaven
+        </span>
+      </div>
+      <div
+        class="description"
+      >
+        <em>
+          description:
+        </em>
+        <span>
+          goals galore
+        </span>
+      </div>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`accordion.createBeersAccordion should create a accordion 1`] = `
+<body>
+  <div
+    id="accordionWrapper"
+  >
+    <h2
+      class="accordionHeader"
+    >
+      Available Beers
+    </h2>
+    <ul />
+  </div>
+</body>
+`;

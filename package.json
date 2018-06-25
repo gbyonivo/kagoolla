@@ -70,7 +70,7 @@
       }
     },
     "setupFiles": [
-      "<rootDir>/src/setupTests.js"
+      "<rootDir>/test/setupTests.js"
     ],
     "verbose": false,
     "snapshotSerializers": [

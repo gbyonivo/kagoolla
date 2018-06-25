@@ -4,5 +4,6 @@ dist
 coverage
 **/webpack.config*
 test/mock/**
+test/setupTests.js
 eslint_config
 jestFileTransformer.js
