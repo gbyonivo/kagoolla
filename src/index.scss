@@ -169,7 +169,7 @@
     }
   }
 
-  @media screen and (max-height: 445px){
+  @media only screen and (max-height: 445px){
     body{
       background: #000;
       #gridWrapper{
@@ -179,7 +179,7 @@
       }
     }
   }
-  @media screen and (max-height: 768px){
+  @media only screen and (max-height: 768px){
     body{
       header{
         display: none;
